@@ -59,12 +59,16 @@ To test generation performance, 1m compounds were generated at various temperatu
 * `percent_valid` denotes `n_valid_smiles/n_unique_smiles`
 * `percent_unique_and_valid` denotes `n_valid_smiles/n_total_smiles`
 
-|    |   temperature |   percent_unique |   percent_valid |   percent_unique_and_valid |
-|---:|--------------:|-----------------:|----------------:|---------------------------:|
-|  0 |          0.5  |         0.928074 |        1        |                   0.928074 |
-|  1 |          0.75 |         0.998468 |        0.999967 |                   0.998436 |
-|  2 |          1    |         0.999659 |        0.999164 |                   0.998823 |
-|  3 |          1.25 |         0.999514 |        0.99351  |                   0.993027 |
-|  4 |          1.5  |         0.998749 |        0.970223 |                   0.96901  |
+|   temperature |   percent_unique |   percent_valid |   percent_unique_and_valid |
+|--------------:|-----------------:|----------------:|---------------------------:|
+|          0.5  |         0.928074 |        1        |                   0.928074 |
+|          0.75 |         0.998468 |        0.999967 |                   0.998436 |
+|          1    |         0.999659 |        0.999164 |                   0.998823 |
+|          1.25 |         0.999514 |        0.99351  |                   0.993027 |
+|          1.5  |         0.998749 |        0.970223 |                   0.96901  |
+
+Property histograms computed over 1m generated compounds:
+![property histograms](https://github.com/kheyer/gpt2_zinc_87m/blob/main/generated_properties.png)
+
 
 
