@@ -51,6 +51,17 @@ mask = inputs['attention_mask']
 embeddings = ((full_embeddings * mask.unsqueeze(-1)).sum(1) / mask.sum(-1).unsqueeze(-1))
 ```
 
+### WARNING
+
+This model was trained with `bos` and `eos` tokens around SMILES inputs. The `GPT2TokenizerFast` tokenizer DOES NOT ADD special tokens, 
+even when `add_special_tokens=True`. Huggingface says this is [intended behavior](https://github.com/huggingface/transformers/issues/3311#issuecomment-693719190). 
+
+It may be necessary to manually add these tokens
+
+```python
+inputs = collator(tokenizer([tokenizer.bos_token+i+tokenizer.eos_token for i in smiles]))
+```
+
 ## Model Performance
 
 To test generation performance, 1m compounds were generated at various temperature values. Generated compounds were checked for uniqueness and structural validity.
